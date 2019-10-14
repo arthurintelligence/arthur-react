@@ -1,4 +1,4 @@
-import * as analytics from './analytics';
+import * as Analytics from './analytics';
 
 export * from './ArthurContext';
-export { analytics };
+export { Analytics };

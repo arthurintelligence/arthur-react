@@ -4,9 +4,9 @@ import * as ArthurReact from './index';
 
 test('should export all the types under "analytics"', () => {
   // @ts-ignore
-  const options: ArthurReact.analytics.AnalyticsHookOptions = {};
+  const options: ArthurReact.Analytics.AnalyticsHookOptions = {};
   // @ts-ignore
-  const result: ArthurReact.analytics.AnalyticsHookResult = {};
+  const result: ArthurReact.Analytics.AnalyticsHookResult = {};
 });
 
 test('should export all the analytics functions under "analytics"', () => {
@@ -19,7 +19,7 @@ test('should export all the analytics functions under "analytics"', () => {
     AnalyticsHookResult: Joi.any(),
   });
 
-  const validated = ANALYTICS_EXPORTS_SCHEMA.validate(ArthurReact.analytics);
+  const validated = ANALYTICS_EXPORTS_SCHEMA.validate(ArthurReact.Analytics);
 
   expect(validated.error).toBe(undefined);
 })
