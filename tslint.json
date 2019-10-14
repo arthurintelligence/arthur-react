@@ -5,6 +5,9 @@
     "no-implicit-dependencies": [true, "dev"],
     "no-parameter-reassignment": true,
     "typedef": [true, "call-signature"],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "interface-over-type-literal": false,
+    "no-var-keyword": false
   }
 }

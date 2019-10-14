@@ -4,9 +4,9 @@ import * as ArthurReact from './index';
 
 test('should export all the types under "analytics"', () => {
   // @ts-ignore
-  var object: ArthurReact.analytics.AnalyticsTypes.AnalyticsHookOptions = {};
+  const options: ArthurReact.analytics.AnalyticsHookOptions = {};
   // @ts-ignore
-  var object: ArthurReact.analytics.AnalyticsTypes.AnalyticsHookResult = {};
+  const result: ArthurReact.analytics.AnalyticsHookResult = {};
 });
 
 test('should export all the analytics functions under "analytics"', () => {
@@ -15,6 +15,8 @@ test('should export all the analytics functions under "analytics"', () => {
   // The reason why Joi is not used in the package is due to its size in comparison to yup ¯\_(ツ)_/¯
   const ANALYTICS_EXPORTS_SCHEMA = Joi.object({
     useAnalytics: Joi.function().required(),
+    AnalyticsHookOptions: Joi.any(),
+    AnalyticsHookResult: Joi.any(),
   });
 
   const validated = ANALYTICS_EXPORTS_SCHEMA.validate(ArthurReact.analytics);

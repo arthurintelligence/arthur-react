@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { ArthurClient } from '@goarthur/arthur-js';
 import * as yup from 'yup';
 import { useArthurClient } from '../ArthurContext';
-import { ArthurClient } from '@goarthur/arthur-js';
 
 const REGEX_UUID_V4 = /^[0-9A-F]{8}-[0-9A-F]{4}-[4][0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i;
 const UUID_V4_SCHEMA = yup.string().matches(REGEX_UUID_V4);
@@ -74,9 +74,9 @@ export function useAnalytics(analyticUUID: string, arg2: string | Parameters, ar
 
   // call the api
   useEffect(() => {
-    async function asyncEffect() {
+    async function asyncEffect(): Promise<void> {
       try {
-        const result = await client.query({
+        const queryResult = await client.query({
           query: rawQuery,
           context: {
             ...(clientContext),
@@ -85,7 +85,7 @@ export function useAnalytics(analyticUUID: string, arg2: string | Parameters, ar
           },
         });
         setResult({
-          data: result,
+          data: queryResult,
           isLoading: false,
           error: null,
           query: rawQuery,

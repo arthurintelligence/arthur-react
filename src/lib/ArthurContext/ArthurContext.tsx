@@ -9,7 +9,7 @@ type ArthurProviderProps = {
   children: React.ReactNode;
 };
 
-function ArthurProvider({ client, children }: ArthurProviderProps) {
+function ArthurProvider({ client, children }: ArthurProviderProps): React.ReactElement {
   return (
     <ArthurClientInstanceContext.Provider value={client} >
       {children}
